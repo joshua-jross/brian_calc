@@ -3,6 +3,7 @@ var displayArray = [];
 var stringNumberToPush = '';
 var diplayInputs = '';
 var calculationResults = null;
+var storedNumber = null;
 
 $(document).ready( initializeApp );
 
@@ -11,13 +12,29 @@ function initializeApp() {
 }
 
 function applyClickHandlers() {
-    
+
     $('#number-block').on('click', '.number', numberButtonHandler);
     $('#operator-column').on('click', '.operator', operatorButtonHandler);
     $('#equals').click(equalsButtonHandler);
     $('#c-button').on('click', cButtonHandler);
     $('#ac-button').on('click', acButtonHandler);
-    $('#decimal').on('click', decimalButtonHandler)
+    $('#decimal').on('click', decimalButtonHandler);
+    $('#decimal').on('click', decimalButtonHandler);
+    $('#mplus').on('click', memoryStore);
+    $('#mr').on('click', memoryReturn);
+    $('#mc').on('click', memoryClear);
+
+}
+
+function memoryStore() {
+    console.log('memoryStore');
+    storedNumber = calculationArray.slice(-1);
+}
+function memoryReturn() {
+    console.log('memoryReturn');
+}
+function memoryClear() {
+    console.log('memoryClear');
 }
 
 function numberButtonHandler(event) {
@@ -103,13 +120,12 @@ function reduceexpression(tolkenarray) {
 
 
 function parseParen(tolkenarray) {
-    
+
 }
 function calculate(num1, num2, operator) {
     var number1 = parseFloat(num1);
     var number2 = parseFloat(num2);
     console.log(number1, number2);
-    var result = null;
 
     switch(operator) {
         case '+':
@@ -124,11 +140,14 @@ function calculate(num1, num2, operator) {
         case '*':
             result = number1 * number2;
             break;
+        case 'TAN':
+            result = Math.tan(number1 * Math.PI / 180);
+            break;
         default:
             return null;
     }
     return result;
-    
+
 }
 
 console.log(1.0, 2, '*');

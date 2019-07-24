@@ -13,7 +13,7 @@ body * {
     transform: translate(-50%, -50%);
     height: 70%;
     /* width: 30%; */
-    width: 50%; 
+    width: 50%;
     background-color: lavender;
 }
 .display-text {
@@ -63,7 +63,7 @@ body * {
     margin-top: 8px;
     vertical-align: top;
 }
-.number, .decimal, .equals {
+.number, .decimal, .equals, .memory {
     position: relative;
     display: inline-block;
     height: 23%;
@@ -87,6 +87,7 @@ body * {
     height: 24%;
     background-color: cornflowerblue;
 }
+
 .center {
     position: absolute;
     top: 50%;
